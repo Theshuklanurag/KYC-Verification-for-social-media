@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Theme toggle button */
+#themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: blue;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  z-index: 999;
+}
+
+/* Selection container */
+.selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333; /* Default dark gray */
+}
+
+.selection-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Icons for selection */
+.user-type {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.icon:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.08);
+}
+
+.icon i {
+  font-size: 70px; /* Icon size bigger */
+  margin-bottom: 12px;
+  color: #4facfe;
+}
+
+.icon p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 8px;
+}
+
+/* Login form container */
+.login-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width: 300px;
+  margin-top: 20px;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4facfe;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #00c6ff;
+}
+
+#loginForm a {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #4facfe;
+}
+
+#error-msg {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+body.dark-mode .selection-container,
+body.dark-mode .icon p,
+body.dark-mode .selection-container h2 {
+  color: white; /* Text white in dark mode */
+}
+
+body.dark-mode .icon {
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode .login-container {
+  background: #2c2c2c;
+  color: white;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+body.dark-mode input::placeholder {
+  color: #ccc;
+}
+
+body.dark-mode #themeToggle {
+  background-color: #333;
+  color: white;
+}

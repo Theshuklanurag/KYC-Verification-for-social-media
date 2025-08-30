@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeriSOC | Securing Social Media</title>
+  
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo" data-aos="fade-right" data-aos-duration="1000">VeriSOC</div>
+    <nav>
+      <ul class="nav-links" data-aos="fade-left" data-aos-duration="1000">
+        
+        <li><a href="signup.html"><i class="fa-solid fa-user"></i> Profile</a></li> <!-- Changed Register to Profile -->
+
+        <li><a href="kyc.html"><i class="fa-solid fa-id-card"></i> KYC</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+
+  <section class="hero">
+    <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+      <h1>Empowering a Safer Digital India</h1>
+      <p>VeriSOC: Building trust through verified identities, preventing misinformation, and securing social media platforms.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container" data-aos="fade-up" data-aos-duration="1200">
+      <h2>About VeriSOC</h2>
+      <p>
+        VeriSOC is an initiative designed to ensure that users on social media platforms are real and trustworthy. By verifying identities through
+        authenticated KYC methods like Aadhaar and Passport validation, VeriSOC combats the rising threats of misinformation, cyber fraud, and online impersonation.
+      </p>
+      <p>
+        Our goal is to strengthen the Indian digital ecosystem by creating a secure, transparent, and reliable social media environment
+        for every citizen.
+      </p>
+    </div>
+  </section>
+
+  <section id="features" class="features-section">
+    <div class="container" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Key Features</h2>
+      <ul>
+        <li>🔐 Aadhaar / Passport-based KYC Authentication</li>
+        <li>⚠ AI-powered Misinformation Detection</li>
+        <li>🛡 Controlled Access for Anonymous Users</li>
+        <li>📊 Admin Dashboard to Track and Flag Content</li>
+        <li>🚀 Fast, Secure, and User-friendly Verification Process</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer" data-aos="fade-up">
+    <p>&copy; 2025 VeriSOC. Built to secure India's digital future.</p>
+  </footer>
+
+  <!-- Assistant Chatbot Start -->
+<div class="chatbot-container">
+  <div class="chatbot-header" onclick="toggleChatbot()">
+    <i class="fa-solid fa-robot"></i> Assistant
+  </div>
+  <div class="chatbot-body" id="chatbotBody">
+    <div class="chatbot-messages" id="chatMessages"></div>
+    <div class="chatbot-options" id="chatOptions">
+      <button onclick="handleOption('register')">How to Register?</button>
+      <button onclick="handleOption('kyc')">How to Verify KYC?</button>
+      <button onclick="handleOption('about')">What is VeriSOC?</button>
+      <button onclick="handleOption('contact')">Contact Support</button>
+    </div>
+    <input type="text" id="userInput" placeholder="Or type your question..." onkeypress="handleKeyPress(event)" />
+  </div>
+</div>
+<!-- Assistant Chatbot End -->
+
+
+  <script src="script.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

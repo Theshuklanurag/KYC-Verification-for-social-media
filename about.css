@@ -1,0 +1,254 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Light Theme */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #232526 0%, #414345 100%);
+        color: #e0e0e0;
+    }
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #111;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    animation: slideInTop 1s ease forwards;
+}
+
+@media (prefers-color-scheme: dark) {
+    header {
+        color: #fff;
+        border-bottom: 2px solid rgba(255,255,255,0.1);
+    }
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes slideInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00;
+    }
+    50% {
+        box-shadow: 0 0 20px #ffa500, 0 0 30px #ffa500;
+    }
+    100% {
+        box-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00;
+    }
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Developer Section */
+.developer-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+/* Developer Card */
+.developer-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(15px);
+    width: 280px;
+    padding: 25px;
+    border-radius: 25px;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+    animation: fadeZoom 1.5s ease forwards;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.developer-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    animation: pulseGlow 2s infinite alternate;
+}
+
+/* Card Hover Accent */
+.developer-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, #ff8c00 0%, transparent 60%);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+.developer-card:hover::before {
+    opacity: 0.3;
+}
+
+/* Developer Image */
+.developer-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ff8c00;
+    transition: transform 0.4s;
+}
+
+.developer-card:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Developer Info */
+.developer-card h2 {
+    font-size: 1.8rem;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .developer-card h2 {
+        color: #fff;
+    }
+}
+
+.developer-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .developer-card p {
+        color: #ccc;
+    }
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 6px;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #f12711, #f5af19);
+    color: white;
+    transition: background 0.4s, transform 0.3s;
+}
+
+.social-links a:hover {
+    background: linear-gradient(45deg, #f5af19, #f12711);
+    transform: scale(1.1);
+}
+
+/* Button */
+button {
+    margin: 40px auto;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.4s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+}
+
+/* Custom Button Link */
+.custom-button {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .developer-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .developer-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    button {
+        width: 80vw;
+        font-size: 1rem;
+    }
+}

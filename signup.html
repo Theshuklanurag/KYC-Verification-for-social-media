@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome | VeriSOC</title>
+  <link rel="stylesheet" href="signup.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="profile-container">
+    <h2>Welcome to VeriSOC</h2>
+
+    <!-- Dark Mode Toggle -->
+    <button id="themeToggle" class="theme-toggle-btn">🌙 Toggle Dark Mode</button>
+
+    <div class="icon-container" id="authIcons">
+      <!-- Sign Up and Login Icons -->
+      <div class="icon" id="signupIcon">
+        <i class="fas fa-user-plus"></i>
+        <p>Sign Up</p>
+      </div>
+      <div class="icon" id="loginIcon" onclick="window.location.href='login.html'">
+        <i class="fas fa-sign-in-alt"></i>
+        <p>Log In</p>
+      </div>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="signup-form-container" id="signupFormContainer">
+      <form id="signupForm">
+        <input type="text" id="fullname" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <button type="submit">Sign Up</button>
+        <p id="signup-error-msg"></p>
+      </form>
+    </div>
+
+    <!-- Profile Section (hidden initially) -->
+    <div id="profileSection" style="display: none;">
+      <h3>Profile</h3>
+      <p><strong>Full Name:</strong> <span id="profileName"></span></p>
+      <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+      <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+  </div>
+
+  <script src="signup.js"></script>
+  
+</body>
+</html>

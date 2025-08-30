@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KYC Form</title>
+  <link rel="stylesheet" href="kyc.css" />
+</head>
+<body>
+  <div class="kyc-container">
+    <h2>🔐 KYC Verification</h2>
+    <form id="kycForm" enctype="multipart/form-data">
+      <input type="text" id="fullname" placeholder="Full Name" required />
+      <input type="date" id="dob" required />
+      <textarea id="address" placeholder="Address" rows="3" required></textarea>
+
+      <select id="idType" required>
+        <option value="">-- Select ID Type --</option>
+        <option value="Aadhaar">Aadhaar</option>
+        <option value="PAN">PAN</option>
+        <option value="Passport">Passport</option>
+      </select>
+
+      <input type="text" id="idNumber" placeholder="ID Number" required />
+
+      <label>ID Proof (Image/PDF)</label>
+      <input type="file" id="idProof" accept=".jpg,.jpeg,.png,.pdf" required />
+
+      <label>Upload Selfie</label>
+      <input type="file" id="selfie" accept="image/*" />
+
+      <button type="submit">Submit KYC</button>
+    </form>
+
+    <p id="kyc-status-msg"></p>
+  </div>
+
+  <!-- ✅ Check login first -->
+  <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (!isLoggedIn || !currentUser) {
+      alert("Please login first.");
+      window.location.href = "hey.html";
+    }
+  </script>
+
+  <!-- ✅ Form logic -->
+  <script src="kyc.js"></script>
+</body>
+</html>

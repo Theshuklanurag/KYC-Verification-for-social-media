@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - KYC Management</title>
+  <link rel="stylesheet" href="admin.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="theme-toggle">
+    <button id="toggleTheme">🌙 Toggle Dark Mode</button>
+  </div>
+
+  <div class="admin-container">
+    <h2>🔐 Admin Dashboard - KYC Management</h2>
+
+    <input type="text" id="searchInput" placeholder="Search by name or username..." />
+
+    <div class="analytics">
+      <p>Total KYC Submissions: <span id="totalCount">0</span></p>
+      <p>Approved: <span id="approvedCount">0</span></p>
+      <p>Rejected: <span id="rejectedCount">0</span></p>
+      <p>Suspicious: <span id="suspiciousCount">0</span></p>
+      <p>Pending: <span id="pendingCount">0</span></p>
+      <div class="export-buttons">
+        <button id="exportCsvBtn">📄 Export CSV</button>
+        <button id="exportPdfBtn">📄 Export PDF</button>
+      </div>
+    </div>
+
+    <div class="chart-switcher">
+      <button id="barChartBtn">📊 Bar Chart</button>
+      <button id="pieChartBtn">🥧 Pie Chart</button>
+    </div>
+
+    <canvas id="kycChart" style="max-height: 300px; margin-top: 20px;"></canvas>
+
+    <h3>Pending / Under Review</h3>
+    <div id="kyc-list"></div>
+
+    <h3>✅ Approved</h3>
+    <div id="approved-list"></div>
+
+    <h3>❌ Rejected</h3>
+    <div id="rejected-list"></div>
+
+  </div>
+
+  <!-- Lightbox for Image Zoom -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <!-- Video KYC Modal -->
+  <div id="videoKycModal" class="video-kyc-modal">
+    <div class="video-kyc-content">
+      <video id="videoElement" autoplay muted></video>
+      <button id="closeVideoKyc">Close Video KYC</button>
+    </div>
+  </div>
+  <div class="logout-button">
+    <button id="logoutBtn">🚪 Logout</button>
+  </div>
+  
+  <script src="admin.js"></script>
+</body>
+</html>
